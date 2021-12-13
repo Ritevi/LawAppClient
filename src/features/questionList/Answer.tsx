@@ -3,19 +3,18 @@ import { Answer } from "../../models/Answer";
 import styles from './QuestionList.module.css';
 export interface AnswerProps {
     answer: Answer,
-    chooseAnswer : (answer:Answer)=>void
+    chooseAnswer : (answer:Answer)=>void,
+    isChoosed : boolean
 }
 
-export const AnswerComponent:FC<AnswerProps> = ({answer,chooseAnswer})=>{
-    let [isChoosed, setIsChoosed] = useState<boolean>(false);
-
+export const AnswerComponent:FC<AnswerProps> = ({answer,chooseAnswer, isChoosed})=>{
+    console.log(isChoosed,answer.text);
     const clickHandler = (event: React.MouseEvent<HTMLLIElement>) => {
         event.preventDefault();
         chooseAnswer(answer);
-        setIsChoosed(!isChoosed);
       };
 
-    let className = (isChoosed && styles.choosed) as string;
+    let className = (isChoosed ? styles.choosed : "") ;
     return <li onClick={clickHandler} >
         <a className={className}>{answer.text}</a>
     </li>

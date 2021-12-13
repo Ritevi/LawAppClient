@@ -12,7 +12,8 @@ interface QuestionSelectProps{
 }
 
 export const QuestionSelect: FC<QuestionSelectProps> = ({ question }) => {
-    const selectedAnswers = useAppSelector(selectAnswers(question.id));
+    let selectedAnswers = useAppSelector(selectAnswers(question.id)) || [];
+    let selectedAnswerIds =  selectedAnswers.map(x=>x.id);
     const dispatch = useAppDispatch();
     const [needInfo, setNeedInfo] = useState<boolean>(false);
 
@@ -28,7 +29,7 @@ export const QuestionSelect: FC<QuestionSelectProps> = ({ question }) => {
     let renderAnswers = (answers:Answer[])=>{
         
         return answers.map(answer=> 
-            <AnswerComponent answer={answer} chooseAnswer={chooseAnswer}/>
+                <AnswerComponent answer={answer} chooseAnswer={chooseAnswer} isChoosed={selectedAnswerIds.includes(answer.id)}/>
             )
     }
 
