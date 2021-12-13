@@ -1,0 +1,1 @@
+export const getServer = ()=> "http://localhost:5002";
