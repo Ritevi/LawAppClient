@@ -1,4 +1,7 @@
-   
+.question {
+    border-bottom: 2px solid #fff;
+}
+
 .question p {
     color: #D3D4DA;
     text-decoration: none;
@@ -68,6 +71,16 @@
     background: #D3D4DA;
     color: #444;
     text-decoration: none;
-    margin-top: -.5em;
     border: .2em solid transparent;
+  }
+
+  .answers {
+    max-height: 0%;
+    transition: 0.5s;
+    overflow: hidden;
+    display: none;
+  }
+
+  .answers.showAnswers  {
+    max-height: 100%;
   }

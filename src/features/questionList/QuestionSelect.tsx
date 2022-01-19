@@ -1,4 +1,4 @@
-import { FC, useState } from "react"
+import React, { FC, useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { Answer } from "../../models/Answer"
 import { Question } from "../../models/Question"
@@ -16,12 +16,14 @@ export const QuestionSelect: FC<QuestionSelectProps> = ({ question }) => {
     let selectedAnswerIds =  selectedAnswers.map(x=>x.id);
     const dispatch = useAppDispatch();
     const [needInfo, setNeedInfo] = useState<boolean>(false);
+    const [showAnswers, setShowAnswers] = useState<boolean>(true);
 
     let chooseAnswer = (answer : Answer)=>{
-        dispatch(addAnswer({questionId:question.id,answer}));
+        dispatch(addAnswer({questionId:question.id,answer, isBool:question.answers.length<=2}));
     }
 
-    let handleInfo = ()=>{
+    let handleInfo = (event: React.MouseEvent<HTMLButtonElement>)=>{
+        event.stopPropagation();
         setNeedInfo(!needInfo);
     }
 
@@ -33,11 +35,15 @@ export const QuestionSelect: FC<QuestionSelectProps> = ({ question }) => {
             )
     }
 
+    let toogleShowAnswers = () => {
+        setShowAnswers(!showAnswers);
+    }
+
     return <div className={styles.question}>
         <ol>  
             {needInfo && <PreviousQuestionPopUp question={question.previousQuestion}/>}
-            <p>{question.text} <span><button onClick={handleInfo}>?</button></span></p>          
-            {renderAnswers(question.answers)}
+            <p onClick={toogleShowAnswers}>{question.text} <span><button onClick={handleInfo}>?</button></span></p>          
+            {showAnswers && renderAnswers(question.answers)}
         </ol>
     </div>
 }

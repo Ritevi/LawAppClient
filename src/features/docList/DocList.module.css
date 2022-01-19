@@ -46,3 +46,23 @@
     margin-top: -.5em;
     transition: all .3s ease-out;
   }
+
+
+  .docGroupList {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: .5em;
+  }
+
+  .docGroup1 {
+    flex: 1;
+  }
+
+  .docGroup2 {
+    flex: 1;
+  }
+
+  .docGroup3 {
+    flex: 2;
+  }

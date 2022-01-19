@@ -1,4 +1,5 @@
 export interface Doc {
     id : string,
-    name :string
+    name :string,
+    type :string
 }
