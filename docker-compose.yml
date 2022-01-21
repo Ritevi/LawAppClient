@@ -1,0 +1,14 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  lawapp-client:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 5555:80
+    container_name: lawapp-client
+    environment:
+      API_HOST: http://localhost:5002
