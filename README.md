@@ -1,5 +1,23 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+### `.env for docker environment variables`
+Example: Add something like this to .env file (new line):
+MY_SECRET_KEY=SOME_SECRET
+
+Then add two lines to build section in docker-compose:
+args:
+	REACT_APP_MY_SECRET_KEY: ${MY_SECRET_KEY}
+
+Then to Dockerfile to take this args to React (it's necessary to start names from REACT_APP_)
+ARG REACT_APP_MY_SECRET_KEY
+ENV REACT_APP_MY_SECRET_KEY $REACT_APP_MY_SECRET_KEY
+
+Then you can access to them in client via:
+process.env.REACT_APP_MY_SECRET_KEY
+
+If u dont want to use .env file. Simple way to do the same is to add your string to Dockerfile like:
+ENV REACT_APP_HOST_IP_ADDRESS localhost
+ 
 ## Available Scripts
 
 In the project directory, you can run:
