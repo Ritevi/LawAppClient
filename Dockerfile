@@ -2,16 +2,13 @@ FROM node:12.14.1 as build
 WORKDIR /app
 
 ENV PATH /app/node_modules/.bin:$PATH
+# ENV REACT_APP_HOST_IP_ADDRESS localhost
 
-# COPY .npmrc /app/.npmrc
+ARG REACT_APP_API_URL
+ENV REACT_APP_API_URL $REACT_APP_API_URL
+
 COPY package.json /app/package.json
-# COPY .yarnrc /app/.yarnrc
-# COPY yarn.lock /app/yarn.lock
-
 RUN yarn install
-
-# RUN rm .npmrc
-
 COPY . /app
 
 RUN yarn build

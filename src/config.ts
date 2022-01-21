@@ -1,1 +1,1 @@
-export const getServer = ()=> "http://localhost:5002";
+export const getServer = () => process.env.REACT_APP_API_URL;
