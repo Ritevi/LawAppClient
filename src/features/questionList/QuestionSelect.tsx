@@ -15,7 +15,7 @@ export const QuestionSelect: FC<QuestionSelectProps> = ({ question }) => {
     let selectedAnswers = useAppSelector(selectAnswers(question.id)) || [];
     let selectedAnswerIds =  selectedAnswers.map(x=>x.id);
     const dispatch = useAppDispatch();
-    const [needInfo, setNeedInfo] = useState<boolean>(false);
+    const [needInfo, setNeedInfo] = useState<{[index: string]:boolean}>({});
     const [showAnswers, setShowAnswers] = useState<boolean>(true);
 
     let chooseAnswer = (answer : Answer)=>{
@@ -24,7 +24,11 @@ export const QuestionSelect: FC<QuestionSelectProps> = ({ question }) => {
 
     let handleInfo = (event: React.MouseEvent<HTMLButtonElement>)=>{
         event.stopPropagation();
-        setNeedInfo(!needInfo);
+        console.log(question.id)
+        console.log(needInfo[question.id]);
+        let needInfoObj = {...needInfo};
+        needInfoObj[question.id] = !needInfo[question.id]
+        setNeedInfo(needInfoObj);
     }
 
 
@@ -42,7 +46,7 @@ export const QuestionSelect: FC<QuestionSelectProps> = ({ question }) => {
 
     return <div className={styles.question}>
         <ol>  
-            {needInfo && <PreviousQuestionPopUp question={question.previousQuestion}/>}
+            {needInfo[question.id] && <PreviousQuestionPopUp question={question.previousQuestion}/>}
             <p onClick={toogleShowAnswers}>{question.text} <span><button onClick={handleInfo}>?</button></span></p>          
             {showAnswers && renderAnswers(question.answers)}
         </ol>
