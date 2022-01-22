@@ -30,7 +30,7 @@ export const DocGroupComponent : FC<DocGroupComponentProps> = ({docs, keyName})=
     }
 
     return <div className={styles["docGroup"+keyName]}>
-    <p>{ParseType(keyName)}</p>
+    <p className={styles.docName}>{ParseType(keyName)}</p>
     <div className={styles.docs}>
     <ol>
         {renderDocs(docs)}

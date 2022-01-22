@@ -55,6 +55,10 @@
     gap: .5em;
   }
 
+  .docGroupList p {
+    color: #D3D4DA;
+  }
+  
   .docGroup0 {
     flex: 1;
   }
