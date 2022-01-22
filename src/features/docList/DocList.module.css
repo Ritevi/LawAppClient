@@ -55,14 +55,14 @@
     gap: .5em;
   }
 
+  .docGroup0 {
+    flex: 1;
+  }
+
   .docGroup1 {
     flex: 1;
   }
 
   .docGroup2 {
-    flex: 1;
-  }
-
-  .docGroup3 {
     flex: 2;
   }
