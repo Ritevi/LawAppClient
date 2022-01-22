@@ -31,7 +31,7 @@ export const QuestionList : FC<QuestionListProps> = ({})=>{
                 <QuestionSelect question={x}/>
                 )
         }
-        <button className={styles.questionButton} onClick={submitNextQuestions}>To next questions</button>
+        <button className={styles.questionButton} onClick={submitNextQuestions}>Следующие вопросы</button>
     </>
 }
 

@@ -70,3 +70,14 @@
   .docGroup2 {
     flex: 2;
   }
+
+  .questionButton {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    margin: .5em 0 .5em 0;
+    background: #D3D4DA;
+    color: #444;
+    text-decoration: none;
+    border: .2em solid transparent;
+  }

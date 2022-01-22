@@ -1,4 +1,5 @@
 import { FC, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { Doc } from "../../models/Doc";
 import { getDocsAsync, selectDocs } from "../../redux/doc/docSlice";
@@ -13,12 +14,15 @@ export const DocList : FC<DocListProps> = ({})=>{
     const docs = useAppSelector(selectDocs);
     const dispatch = useAppDispatch();
     let groupedDocsByType = groupBy(docs,"type");
+    const navigate = useNavigate();
 
     useEffect(()=>{
         dispatch(getDocsAsync());
     },[dispatch])
 
-
+    let goToMain = ()=>{
+        navigate("/")
+    }
 
     const renderGroup = (groupedDocs:{
         [key: string]: Doc[];
@@ -29,11 +33,15 @@ export const DocList : FC<DocListProps> = ({})=>{
             )
     }
 
-    return <div className={styles.docGroupList}>
+    return <>
+    <div className={styles.docGroupList}>
         {
             renderGroup(groupedDocsByType)
         }
+        
     </div>
+    <button className={styles.questionButton} onClick={goToMain}>Вернуться к заполнению вопросов</button>
+    </>
 }
 
 var groupBy = function(xs: Doc[], key: keyof Doc) : {[key: string]: Doc[]} {
