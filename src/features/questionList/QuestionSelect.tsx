@@ -29,8 +29,9 @@ export const QuestionSelect: FC<QuestionSelectProps> = ({ question }) => {
 
 
     let renderAnswers = (answers:Answer[])=>{
-        
-        return answers.map(answer=> 
+        console.log(answers);
+        let copy = [...answers];
+        return copy.sort((x,y)=>x.text.localeCompare(y.text)).map(answer=> 
                 <AnswerComponent answer={answer} chooseAnswer={chooseAnswer} isChoosed={selectedAnswerIds.includes(answer.id)}/>
             )
     }
