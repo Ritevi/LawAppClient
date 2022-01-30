@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Doc } from "../../models/Doc";
 import { DocComponent } from "./DocComponent";
-import styles from "./DocList.module.css"
+import styles from "./DocList.module.scss"
 
 
 export interface DocGroupComponentProps {
@@ -12,11 +12,11 @@ export interface DocGroupComponentProps {
 const ParseType = (typeNumber:string)=>{
     switch (typeNumber){
         case "0":
-            return "Документы"
+            return "Документы. Затрагиваемые НПА:"
         case "1":
-            return "Лицензии"    
+            return "Лицензии. Требуемые лицензии и сертификаты:"
         case "2": 
-            return "Рекомендации"
+            return "Рекомендации. Перечень организационно технических мер:"
 
     }
 }

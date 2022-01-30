@@ -4,11 +4,13 @@ import { getFirstQuestionAsync, getNextQuestionsAsync, selectQuestions } from ".
 import { QuestionSelect } from "./QuestionSelect";
 import { useNavigate } from 'react-router-dom';
 import styles from  './QuestionList.module.scss';
+import {Question} from "../../models/Question";
 export interface QuestionListProps{
-    
+    setHint:  (hint: string) => void;
 }
 
-export const QuestionList : FC<QuestionListProps> = ({})=>{
+export const QuestionList : FC<QuestionListProps> = (props)=>{
+    props.setHint("Давайте начнем с крупных категорий. Внимательно прочитайте вопросы, не пропустите ничего!");
     const questions = useAppSelector(selectQuestions);
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
@@ -23,6 +25,9 @@ export const QuestionList : FC<QuestionListProps> = ({})=>{
 
     if(questions.length === 0){
         navigate("/docs");
+    }
+    if (questions.some((q: Question)=> q.previousQuestion)) {
+        props.setHint("Пожалуйста ответьте на вопросы для составления отчета.");
     }
 
     return <>

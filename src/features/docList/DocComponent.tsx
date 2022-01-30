@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Doc } from "../../models/Doc";
-import './DocList.module.css';
+import './DocList.module.scss';
 export interface DocComponentProps {
     doc:Doc
 }

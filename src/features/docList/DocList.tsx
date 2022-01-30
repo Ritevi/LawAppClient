@@ -4,13 +4,15 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { Doc } from "../../models/Doc";
 import { getDocsAsync, selectDocs } from "../../redux/doc/docSlice";
 import { DocGroupComponent } from "./DocGroupComponent";
-import styles from "./DocList.module.css"
+import styles from "./DocList.module.scss"
 
 export interface DocListProps{
-
+    setHint:  (hint: string) => void;
 }
 
-export const DocList : FC<DocListProps> = ({})=>{
+export const DocList : FC<DocListProps> = (props)=>{
+    props.setHint("Мы просчитали ваши ответы. На их основе необходимо выполнить требования в описанных документах, а также получить описанные лицензии. " +
+        "Также вы можете следовать рекомендациям написанным нашими юристами для Вашего комфорта.");
     const docs = useAppSelector(selectDocs);
     const dispatch = useAppDispatch();
     let groupedDocsByType = groupBy(docs,"type");
@@ -40,7 +42,7 @@ export const DocList : FC<DocListProps> = ({})=>{
         }
         
     </div>
-    <button className={styles.questionButton} onClick={goToMain}>Вернуться к заполнению вопросов</button>
+    <button className={styles.questionButton} onClick={goToMain}>Назад к вопросам</button>
     </>
 }
 

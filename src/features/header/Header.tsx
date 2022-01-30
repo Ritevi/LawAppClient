@@ -3,10 +3,10 @@ import styles from "./Header.module.scss";
 import logo from "../../images/logo.png";
 
 export interface HeaderProps {
-
+hint: string
 }
 
-export const Header : FC<HeaderProps> = ()=>{
+export const Header : FC<HeaderProps> = (props)=>{
 
 
 
@@ -24,7 +24,8 @@ export const Header : FC<HeaderProps> = ()=>{
 
         <div className={styles.header_body}>
             <div className={styles.header_subtitle}><span className={styles.purple}>C</span>omputer <span className={styles.purple}>S</span>ecurity <span className={styles.purple}>D</span>ocuments helper</div>
-            <div className={styles.header_hint}>Давайте начнем с крупных категорий. Внимательно прочитайте вопросы, не пропустите ничего!</div>
+            <div className={styles.header_hint}>{props.hint}</div>
+            {/*<div className={styles.header_hint}>Давайте начнем с крупных категорий. Внимательно прочитайте вопросы, не пропустите ничего!</div>*/}
         </div>
     </header>;
 }
