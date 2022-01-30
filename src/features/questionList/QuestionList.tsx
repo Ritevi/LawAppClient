@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getFirstQuestionAsync, getNextQuestionsAsync, selectQuestions } from "../../redux/question/questionSlice";
 import { QuestionSelect } from "./QuestionSelect";
 import { useNavigate } from 'react-router-dom';
-import styles from  './QuestionList.module.css';
+import styles from  './QuestionList.module.scss';
 export interface QuestionListProps{
     
 }
@@ -31,7 +31,7 @@ export const QuestionList : FC<QuestionListProps> = ({})=>{
                 <QuestionSelect question={x}/>
                 )
         }
-        <button className={styles.questionButton} onClick={submitNextQuestions}>Следующие вопросы</button>
+        <button className={styles.questionButton} onClick={submitNextQuestions}>Следующий шаг</button>
     </>
 }
 

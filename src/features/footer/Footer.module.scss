@@ -1,0 +1,26 @@
+$light-grey: #F2F2F2;
+$bold: "Roboto-Bold";
+
+.footer {
+  border-top: 8px solid #CB8515;
+  padding: 1.6rem 10%;
+  margin-top:auto;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  align-items: center;
+  justify-content: center;
+  background-color: $light-grey;
+  font-size: 1.8rem;
+
+  .support{
+    font-family: $bold;
+    margin: 0 0 3.2rem;
+  }
+  p{
+    margin: 0 0 1.6rem;
+  }
+  p:last-child{
+    margin: 0;
+  }
+}

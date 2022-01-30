@@ -1,3 +1,4 @@
+
 .question {
     border-bottom: 2px solid #fff;
 }
@@ -41,15 +42,15 @@
     font-weight: bold;
   }
   
-  .question ol a:after {
-    position: absolute;
-    content: "";
-    border: .5em solid transparent;
-    left: -1em;
-    top: 50%;
-    margin-top: -.5em;
-    transition: all .3s ease-out;
-  }
+  /*.question ol a:after {*/
+  /*  position: absolute;*/
+  /*  content: "";*/
+  /*  border: .5em solid transparent;*/
+  /*  left: -1em;*/
+  /*  top: 50%;*/
+  /*  margin-top: -.5em;*/
+  /*  transition: all .3s ease-out;*/
+  /*}*/
 
   .question ol a.choosed:before{
     background: aquamarine;

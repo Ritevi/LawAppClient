@@ -5,7 +5,7 @@ import { Question } from "../../models/Question"
 import { addAnswer, selectAnswers } from "../../redux/answer/answerSlice";
 import { AnswerComponent } from "./Answer";
 import { PreviousQuestionPopUp } from "./PreviousQuestionPopUp";
-import styles from  './QuestionList.module.css';
+import styles from  './QuestionList.module.scss';
 
 interface QuestionSelectProps{
     question : Question
