@@ -1,0 +1,90 @@
+$light-grey: #F2F2F2;
+$purple: #5865F2;
+$green: #3CA45C;
+$bold: "Roboto-Bold";
+
+.purple {
+  color: $purple;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10% 3.2rem;
+  background-color: $light-grey;
+
+  .header_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 900;
+    font-family: $bold;
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3.6rem;
+      img {
+        display: flex;
+        height: 128px;
+        width: 128px;
+        margin-right: 10px;
+      }
+
+      h1{
+        margin: 0;
+        display: flex;
+        align-items: end;
+        span {
+          display: flex;
+          margin-left: 1rem;
+          font-size: 0.7em;
+
+        }
+      }
+    }
+
+    .buttons{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .button {
+        display: flex;
+        align-items: center;
+        padding: 8px 16px;
+        background-color: $purple;
+        border: none;
+        border-radius: 16px;
+        color: white;
+        font-family: $bold;
+        font-size: 1.8rem;
+
+      }
+
+      button:last-child{
+        background-color: $green;
+        margin-left: 1rem;
+      }
+    }
+
+
+  }
+
+  .header_body {
+    .header_subtitle{
+      display: block;
+      width: 100%;
+      font-size: 3.6rem;
+      font-family: $bold;
+      margin-bottom: 1.6rem;
+    }
+
+    .header_hint{
+      font-size: 1.8rem;
+      color: #8E8E8E;
+    }
+  }
+}
+

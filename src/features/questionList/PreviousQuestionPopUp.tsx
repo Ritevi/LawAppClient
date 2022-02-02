@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { Question } from "../../models/Question"
-import styles from "./QuestionList.module.css"
+import styles from "./QuestionList.module.scss"
 export interface PreviousQuestionPopUpProps {
     question: Question
 }

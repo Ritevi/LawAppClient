@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { Answer } from "../../models/Answer";
-import styles from './QuestionList.module.css';
+import styles from './QuestionList.module.scss';
 export interface AnswerProps {
     answer: Answer,
     chooseAnswer : (answer:Answer)=>void,
@@ -16,6 +16,6 @@ export const AnswerComponent:FC<AnswerProps> = ({answer,chooseAnswer, isChoosed}
 
     let className = (isChoosed ? styles.choosed : "") ;
     return <li onClick={clickHandler} >
-        <a className={className}>{answer.text}</a>
+        <a className={`${styles.answer} ${className}`} >{answer.text}</a>
     </li>
 }

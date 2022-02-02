@@ -1,83 +1,83 @@
-.docs p {
-    color: #D3D4DA;
-    text-decoration: none;
-    transition: all .3s ease-out;
-}
+/*.docs p {*/
+/*    color: #D3D4DA;*/
+/*    text-decoration: none;*/
+/*    transition: all .3s ease-out;*/
+/*}*/
 
-.docs ol {
-    counter-reset: li; 
-    list-style: none; 
-    padding: 0;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
-  }
+/*.docs ol {*/
+/*    counter-reset: li; */
+/*    list-style: none; */
+/*    padding: 0;*/
+/*    text-shadow: 0 1px 0 rgba(255,255,255,.5);*/
+/*  }*/
 
-  .docs ol a {
-    position: relative;
-    display: block;
-    padding: .4em .4em .4em .8em;
-    margin: .5em 0 .5em 2.5em;
-    background: #D3D4DA;
-    color: #444;
-    text-decoration: none;
-    transition: all .3s ease-out;
-  }
-       
-  .docs ol a:before {
-    content: counter(li);
-    counter-increment: li;
-    position: absolute;
-    left: -2.5em;
-    top: 50%;
-    margin-top: -1em;
-    background: #f9dd94;
-    height: 2em;
-    width: 2em;
-    line-height: 2em;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .docs ol a:after {
-    position: absolute;
-    content: "";
-    border: .5em solid transparent;
-    left: -1em;
-    top: 50%;
-    margin-top: -.5em;
-    transition: all .3s ease-out;
-  }
+/*  .docs ol a {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*    padding: .4em .4em .4em .8em;*/
+/*    margin: .5em 0 .5em 2.5em;*/
+/*    background: #D3D4DA;*/
+/*    color: #444;*/
+/*    text-decoration: none;*/
+/*    transition: all .3s ease-out;*/
+/*  }*/
+/*       */
+/*  .docs ol a:before {*/
+/*    content: counter(li);*/
+/*    counter-increment: li;*/
+/*    position: absolute;*/
+/*    left: -2.5em;*/
+/*    top: 50%;*/
+/*    margin-top: -1em;*/
+/*    background: #f9dd94;*/
+/*    height: 2em;*/
+/*    width: 2em;*/
+/*    line-height: 2em;*/
+/*    text-align: center;*/
+/*    font-weight: bold;*/
+/*  }*/
+/*  */
+/*  .docs ol a:after {*/
+/*    position: absolute;*/
+/*    content: "";*/
+/*    border: .5em solid transparent;*/
+/*    left: -1em;*/
+/*    top: 50%;*/
+/*    margin-top: -.5em;*/
+/*    transition: all .3s ease-out;*/
+/*  }*/
 
 
-  .docGroupList {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: .5em;
-  }
+/*  .docGroupList {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: flex-start;*/
+/*    gap: .5em;*/
+/*  }*/
 
-  .docGroupList p {
-    color: #D3D4DA;
-  }
-  
-  .docGroup0 {
-    flex: 1;
-  }
+/*  .docGroupList p {*/
+/*    color: #D3D4DA;*/
+/*  }*/
+/*  */
+/*  .docGroup0 {*/
+/*    flex: 1;*/
+/*  }*/
 
-  .docGroup1 {
-    flex: 1;
-  }
+/*  .docGroup1 {*/
+/*    flex: 1;*/
+/*  }*/
 
-  .docGroup2 {
-    flex: 2;
-  }
+/*  .docGroup2 {*/
+/*    flex: 2;*/
+/*  }*/
 
-  .questionButton {
-    position: relative;
-    display: block;
-    padding: .4em .4em .4em .8em;
-    margin: .5em 0 .5em 0;
-    background: #D3D4DA;
-    color: #444;
-    text-decoration: none;
-    border: .2em solid transparent;
-  }
+/*  .questionButton {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*    padding: .4em .4em .4em .8em;*/
+/*    margin: .5em 0 .5em 0;*/
+/*    background: #D3D4DA;*/
+/*    color: #444;*/
+/*    text-decoration: none;*/
+/*    border: .2em solid transparent;*/
+/*  }*/
